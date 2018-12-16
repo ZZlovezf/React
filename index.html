@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			header{
+				font-weight: 600;
+				font-size:20px;
+				text-align: center;
+				color: #333;
+			}
+			section li{
+				
+				display: flex;
+				justify-content: space-around;
+			}
+			section li{		
+				display:flex;
+				justify-content: space-around;
+				border-bottom: 1px solid #333333;
+			}
+			
+			section li span{
+				width: 200px;
+				height: 30px;
+				line-height:30px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>	
+		<div id="box">
+			<header>
+				1816React项目汇总
+			</header>
+			<section>
+				<ul>
+					<li>
+						<span>组号</span>
+						<span>组长</span>
+						<span>项目</span>
+						<span>组员1</span>
+						<span>组员2</span>
+						
+					</li>
+					<li v-for="(item,index) in list">
+						<span>{{index+1}}</span>
+						<span>{{item.zz}}</span>
+						<span>{{item.xm}}</span>
+						<span>{{item.zy1}}</span>
+						<span>{{item.zy2}}</span>
+						
+					</li>
+				</ul>
+			</section>
+			</div>
+	</body>
+</html>
+<script src="https://cdn.bootcss.com/vue/2.5.18-beta.0/vue.js"></script>
+<script type="text/javascript">
+	let list=[
+    {
+      "zz": "赵锃",
+      "xm": "聚橙",
+      "zy1": "郭斌",
+      "zy2": "杨宁",
+      "id": 1
+    }
+  ]
+	new	Vue({
+		el:"#box",
+		data:{
+			list:list
+		}
+	})
+</script>
