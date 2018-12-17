@@ -63,20 +63,18 @@
 	</body>
 </html>
 <script src="https://cdn.bootcss.com/vue/2.5.18-beta.0/vue.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 <script type="text/javascript">
-	let list=[
-    {
-      "zz": "赵锃",
-      "xm": "聚橙",
-      "zy1": "郭斌",
-      "zy2": "杨宁",
-      "id": 1
-    }
-  ]
 	new	Vue({
 		el:"#box",
 		data:{
-			list:list
+			list:[]
+		},
+		created(){
+
+			$.get("./list.json").then(res=>{
+				this.list=res.list
+			})
 		}
 	})
 </script>
